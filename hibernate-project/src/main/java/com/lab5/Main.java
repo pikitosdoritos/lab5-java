@@ -1,7 +1,7 @@
 package com.lab5;
 
-import com.lab5.util.HibernateUtil;
-import org.hibernate.Session;
+import com.lab5.dao.StudentDAO;
+import com.lab5.model.Student;
 
 public class Main {
 
@@ -9,15 +9,11 @@ public class Main {
 
         System.out.println("Starting Hibernate...");
 
-        Session session = HibernateUtil
-                .getSessionFactory()
-                .openSession();
+        StudentDAO studentDAO = new StudentDAO();
 
-        session.beginTransaction();
+        Student student = new Student("Nikita", 19);
 
-        session.getTransaction().commit();
-
-        session.close();
+        studentDAO.saveStudent(student);
 
         System.out.println("Done.");
     }
