@@ -22,11 +22,7 @@ public class Student {
     private StudentProfile profile;
 
     @ManyToMany
-    @JoinTable(
-            name = "student_tests",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "test_id")
-    )
+    @JoinTable(name = "student_tests", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "test_id"))
     private List<TestEntity> tests = new ArrayList<>();
 
     public Student() {
@@ -57,7 +53,7 @@ public class Student {
     public int getAge() {
         return age;
     }
-    
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -68,6 +64,10 @@ public class Student {
 
     public void setProfile(StudentProfile profile) {
         this.profile = profile;
+
+        if (profile != null) {
+            profile.setStudent(this);
+        }
     }
 
     public List<TestEntity> getTests() {
