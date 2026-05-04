@@ -16,7 +16,7 @@ public class TestEntity {
 
     private String subject;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "tutor_id")
     private Tutor tutor;
 

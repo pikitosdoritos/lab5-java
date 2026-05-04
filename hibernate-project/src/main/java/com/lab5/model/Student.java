@@ -21,7 +21,7 @@ public class Student {
     @JoinColumn(name = "profile_id")
     private StudentProfile profile;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "student_tests", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "test_id"))
     private List<TestEntity> tests = new ArrayList<>();
 
