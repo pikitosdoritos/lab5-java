@@ -2,6 +2,7 @@ package com.lab5;
 
 import com.lab5.dao.StudentDAO;
 import com.lab5.model.*;
+import com.lab5.util.HibernateUtil;
 
 public class Main {
 
@@ -45,5 +46,7 @@ public class Main {
         studentDAO.save(student);
 
         System.out.println("Done.");
+        
+        HibernateUtil.getSessionFactory().close();
     }
 }
