@@ -1,4 +1,4 @@
-package com.lab5.model;
+package com.lab6.model;
 
 import jakarta.persistence.*;
 import java.util.ArrayList;
@@ -34,12 +34,19 @@ public class Student {
     }
 
     public void addTest(TestEntity test) {
+
         tests.add(test);
+
         test.getStudents().add(this);
     }
 
     public Long getId() {
         return id;
+    }
+
+    // IMPORTANT FOR NATIVE SQL
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -63,6 +70,7 @@ public class Student {
     }
 
     public void setProfile(StudentProfile profile) {
+
         this.profile = profile;
 
         if (profile != null) {
@@ -76,5 +84,15 @@ public class Student {
 
     public void setTests(List<TestEntity> tests) {
         this.tests = tests;
+    }
+
+    @Override
+    public String toString() {
+
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

@@ -1,10 +1,10 @@
-package com.lab5.util;
+package com.lab6.util;
 
-import com.lab5.model.Question;
-import com.lab5.model.Student;
-import com.lab5.model.StudentProfile;
-import com.lab5.model.TestEntity;
-import com.lab5.model.Tutor;
+import com.lab6.model.Question;
+import com.lab6.model.Student;
+import com.lab6.model.StudentProfile;
+import com.lab6.model.TestEntity;
+import com.lab6.model.Tutor;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 

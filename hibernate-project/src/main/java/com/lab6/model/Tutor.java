@@ -1,4 +1,4 @@
-package com.lab5.model;
+package com.lab6.model;
 
 import jakarta.persistence.*;
 import java.util.ArrayList;
